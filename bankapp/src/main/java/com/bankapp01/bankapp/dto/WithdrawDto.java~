@@ -1,0 +1,4 @@
+package com.bankapp01.bankapp.dto;
+
+public class WithdrawDto {
+}
