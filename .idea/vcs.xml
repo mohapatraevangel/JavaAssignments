@@ -2,5 +2,10 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/JavaAssignments" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/JavaAssignments/JavaAssignments" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/hibernate_Hello" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/springAOP_assignment2" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/springDI_assignment1" vcs="Git" />
   </component>
 </project>
