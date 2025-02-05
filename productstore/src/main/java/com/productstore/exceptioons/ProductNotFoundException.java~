@@ -1,0 +1,5 @@
+package com.productstore.exceptioons;
+
+public class ProductNotFoundException {
+    
+}

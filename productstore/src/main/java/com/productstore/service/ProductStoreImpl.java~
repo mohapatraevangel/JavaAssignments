@@ -1,0 +1,80 @@
+package com.productstore.service;
+
+import com.productstore.entities.Product;
+import com.productstore.exceptioons.ProductNotFoundException;
+import com.productstore.repo.ProductRepo;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
+@Service
+@Transactional
+public class ProductStoreImpl implements ProductService{
+
+    private ProductRepo productRepo;
+
+    @Autowired
+    public ProductStoreImpl(ProductRepo productRepo) {
+        this.productRepo = productRepo;
+    }
+
+    @Override
+    public Product findByName(String name) {
+        return null;
+    }
+
+    @Override
+    public List<Product> getAllProducts() {
+        return List.of();
+    }
+
+    @Override
+    public Product getProductById(int id) {
+        return null;
+    }
+
+    @Override
+    public Product addProduct(Product product) {
+        return null;
+    }
+
+    @Override
+    public Product updateProduct(int id, Product product) {
+        return null;
+    }
+
+    @Override
+    public void deleteProduct(int id) {
+
+    }
+
+    @Override
+    public List<Product> getAllProductSorted(String field) {
+        return List.of();
+    }
+
+    @Override
+    public Page<Product> getAllProductPage(int offset, int pageSize) {
+        return null;
+    }
+
+    @Override
+    public Page<Product> getAllProductPageSorted(String field, int offset, int pageSize) {
+        return null;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
