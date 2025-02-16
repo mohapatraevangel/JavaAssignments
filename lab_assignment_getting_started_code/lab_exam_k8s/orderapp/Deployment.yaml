@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: orderapp-deploy
+  annotations:
+    kubernetes.io/change-cause: "Deploying v1.1"
+spec:
+  minReadySeconds: 10
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: orderapp
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: orderapp
+    spec:
+      containers:
+        - name: orderapp
+          image: eva97/order-app1.1
+          ports:
+            - name: "app-port"
+              containerPort: 8081

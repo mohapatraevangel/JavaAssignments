@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/docker_k8s_lab_assignment/bookapp/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/docker_k8s_lab_assignment/studentapp/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lab_exam_k8s/orderapp/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lab_exam_spring_ms/deptapp/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lab_exam_spring_ms/empapp/src/main/java" charset="UTF-8" />
+  </component>
+</project>
