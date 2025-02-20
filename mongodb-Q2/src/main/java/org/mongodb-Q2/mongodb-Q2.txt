@@ -1,0 +1,372 @@
+Lab Assignment 2: Mongodb Queries
+-----------------------------------
+
+Consider following json document :
+-----------------------------
+peaks.json
+[
+    {
+        "name": "Everest",
+        "height": 8848,
+        "location": ["Nepal", "China"],
+        "ascents": {
+            "first": {
+                "year": 1953
+            },
+            "first_winter": {
+                "year": 1980
+            },
+            "total": 5656
+        }
+    },
+    {
+        "name": "K2",
+        "height": 8611,
+        "location": ["Pakistan", "China"],
+        "ascents": {
+            "first": {
+                "year": 1954
+            },
+            "first_winter": {
+                "year": 1921
+            },
+            "total": 306
+        }
+    },
+    {
+        "name": "Kangchenjunga",
+        "height": 8586,
+        "location": ["Nepal", "India"],
+        "ascents": {
+            "first": {
+                "year": 1955
+            },
+            "first_winter": {
+                "year": 1986
+            },
+            "total": 283
+        }
+    },
+    {
+        "name": "Lhotse",
+        "height": 8516,
+        "location": ["Nepal", "China"],
+        "ascents": {
+            "first": {
+                "year": 1956
+            },
+            "first_winter": {
+                "year": 1988
+            },
+            "total": 461
+        }
+    },
+    {
+        "name": "Makalu",
+        "height": 8485,
+        "location": ["China", "Nepal"],
+        "ascents": {
+            "first": {
+                "year": 1955
+            },
+            "first_winter": {
+                "year": 2009
+            },
+            "total": 361
+        }
+    }
+]
+
+
+
+
+This document contains the following fields and values:
+-------------------------------------------
+name: the peak’s name
+height: the peak’s elevation, in meters
+location: the countries in which the mountain is located.
+	This field stores values as an array to allow for mountains located in more than one country
+
+ascents:
+	this field’s value is another document.
+	When one document is stored within another document like this,
+	it’s known as an embedded or nested document.
+	Each ascents document describes successful ascents of the given mountain.
+	Specifically, each ascents document contains a total field that lists the
+	total number of successful ascents of each given peak.
+	Additionally, each of these nested documents contain two fields whose values are also nested documents
+
+	first:
+		this field’s value is a nested document that contains one field,
+		year, which describes the year of the first overall successful ascent
+
+	first_winter:
+		this field’s value is a nested document that also contains a year field,
+		 the value of which represents the year of the first successful winter ascent
+		 of the given mountain
+
+
+1. create one mongodb database called peaksdb
+use peaksdb
+
+2. create collections called peaks insert all documents mention above
+ use peaksdb
+switched to db peaksdb
+peaksdb> db.mountains.insertMany([
+...     {
+...         "name": "Everest",
+...         "height": 8848,
+...         "location": ["Nepal", "China"],
+...         "ascents": {
+...             "first": {
+...                 "year": 1953
+...             },
+...             "first_winter": {
+...                 "year": 1980
+...             },
+...             "total": 5656
+...         }
+...     },
+...     {
+...         "name": "K2",
+...         "height": 8611,
+...         "location": ["Pakistan", "China"],
+...         "ascents": {
+...             "first": {
+...                 "year": 1954
+...             },
+...             "first_winter": {
+...                 "year": 1921
+...             },
+...             "total": 306
+...         }
+...     },
+...     {
+...         "name": "Kangchenjunga",
+...         "height": 8586,
+...         "location": ["Nepal", "India"],
+...         "ascents": {
+...             "first": {
+...                 "year": 1955
+...             },
+...             "first_winter": {
+...                 "year": 1986
+...             },
+...             "total": 283
+...         }
+...     },
+...     {
+...         "name": "Lhotse",
+...         "height": 8516,
+...         "location": ["Nepal", "China"],
+...         "ascents": {
+...             "first": {
+...                 "year": 1956
+...             },
+...             "first_winter": {
+...                 "year": 1988
+...             },
+...             "total": 461
+...         }
+...     },
+...     {
+...         "name": "Makalu",
+...         "height": 8485,
+...         "location": ["China", "Nepal"],
+...         "ascents": {
+...             "first": {
+...                 "year": 1955
+...             },
+...             "first_winter": {
+...                 "year": 2009
+...             },
+...             "total": 361
+...         }
+...     }
+... ])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('67b59d554cd30cf76a4d7943'),
+    '1': ObjectId('67b59d554cd30cf76a4d7944'),
+    '2': ObjectId('67b59d554cd30cf76a4d7945'),
+    '3': ObjectId('67b59d554cd30cf76a4d7946'),
+    '4': ObjectId('67b59d554cd30cf76a4d7947')
+  }
+}
+4. Write Query to returns any documents whose name value is equal to Everest:
+peaksdb> db.mountains.find({ "name": "Everest" })
+[
+  {
+    _id: ObjectId('67b59d554cd30cf76a4d7943'),
+    name: 'Everest',
+    height: 8848,
+    location: [ 'Nepal', 'China' ],
+    ascents: {
+      first: { year: 1953 },
+      first_winter: { year: 1980 },
+      total: 5656
+    }
+  }
+]
+5. Write Query to searches for any documents whose name value does not equal Everest
+peaksdb> db.mountains.find({ "name": { $ne: "Everest" } })
+[
+  {
+    _id: ObjectId('67b59d554cd30cf76a4d7944'),
+    name: 'K2',
+    height: 8611,
+    location: [ 'Pakistan', 'China' ],
+    ascents: { first: { year: 1954 }, first_winter: { year: 1921 }, total: 306 }
+  },
+  {
+    _id: ObjectId('67b59d554cd30cf76a4d7945'),
+    name: 'Kangchenjunga',
+    height: 8586,
+    location: [ 'Nepal', 'India' ],
+    ascents: { first: { year: 1955 }, first_winter: { year: 1986 }, total: 283 }
+  },
+  {
+    _id: ObjectId('67b59d554cd30cf76a4d7946'),
+    name: 'Lhotse',
+    height: 8516,
+    location: [ 'Nepal', 'China' ],
+    ascents: { first: { year: 1956 }, first_winter: { year: 1988 }, total: 461 }
+  },
+  {
+    _id: ObjectId('67b59d554cd30cf76a4d7947'),
+    name: 'Makalu',
+    height: 8485,
+    location: [ 'China', 'Nepal' ],
+    ascents: { first: { year: 1955 }, first_winter: { year: 2009 }, total: 361 }
+  }
+]
+6. Write Queries query searches for documents whose height value is greater than 8500
+peaksdb> db.mountains.find({ "height": { $gt: 8500 } })
+[
+  {
+    _id: ObjectId('67b59d554cd30cf76a4d7943'),
+    name: 'Everest',
+    height: 8848,
+    location: [ 'Nepal', 'China' ],
+    ascents: {
+      first: { year: 1953 },
+      first_winter: { year: 1980 },
+      total: 5656
+    }
+  },
+  {
+    _id: ObjectId('67b59d554cd30cf76a4d7944'),
+    name: 'K2',
+    height: 8611,
+    location: [ 'Pakistan', 'China' ],
+    ascents: { first: { year: 1954 }, first_winter: { year: 1921 }, total: 306 }
+  },
+  {
+    _id: ObjectId('67b59d554cd30cf76a4d7945'),
+    name: 'Kangchenjunga',
+    height: 8586,
+    location: [ 'Nepal', 'India' ],
+    ascents: { first: { year: 1955 }, first_winter: { year: 1986 }, total: 283 }
+  },
+  {
+    _id: ObjectId('67b59d554cd30cf76a4d7946'),
+    name: 'Lhotse',
+    height: 8516,
+    location: [ 'Nepal', 'China' ],
+    ascents: { first: { year: 1956 }, first_winter: { year: 1988 }, total: 461 }
+  }
+]
+7.Write Queries to selecting a mountain that matches the name Everest and the exact height of 8848 meters:
+peaksdb> db.mountains.find({ "name": "Everest", "height": 8848 })
+[
+  {
+    _id: ObjectId('67b59d554cd30cf76a4d7943'),
+    name: 'Everest',
+    height: 8848,
+    location: [ 'Nepal', 'China' ],
+    ascents: {
+      first: { year: 1953 },
+      first_winter: { year: 1980 },
+      total: 5656
+    }
+  }
+]
+8Write Queries to selecting a mountain that matches the name Everest or.  the exact height of 8848 meters:
+peaksdb> db.mountains.find({
+...   $or: [
+...     { "name": "Everest" },
+...     { "height": 8848 }
+...   ]
+... })
+[
+  {
+    _id: ObjectId('67b59d554cd30cf76a4d7943'),
+    name: 'Everest',
+    height: 8848,
+    location: [ 'Nepal', 'China' ],
+    ascents: {
+      first: { year: 1953 },
+      first_winter: { year: 1980 },
+      total: 5656
+    }
+  }
+]
+9. Find mountains located in both China and Nepal?
+peaksdb> db.mountains.find({ "location": { $all: ["China", "Nepal"] } })
+[
+  {
+    _id: ObjectId('67b59d554cd30cf76a4d7943'),
+    name: 'Everest',
+    height: 8848,
+    location: [ 'Nepal', 'China' ],
+    ascents: {
+      first: { year: 1953 },
+      first_winter: { year: 1980 },
+      total: 5656
+    }
+  },
+  {
+    _id: ObjectId('67b59d554cd30cf76a4d7946'),
+    name: 'Lhotse',
+    height: 8516,
+    location: [ 'Nepal', 'China' ],
+    ascents: { first: { year: 1956 }, first_winter: { year: 1988 }, total: 461 }
+  },
+  {
+    _id: ObjectId('67b59d554cd30cf76a4d7947'),
+    name: 'Makalu',
+    height: 8485,
+    location: [ 'China', 'Nepal' ],
+    ascents: { first: { year: 1955 }, first_winter: { year: 2009 }, total: 361 }
+  }
+]
+10. Write query to found peek with more than 1000 ascents
+peaksdb> db.mountains.find({ "ascents.total": { $gt: 1000 } })
+[
+  {
+    _id: ObjectId('67b59d554cd30cf76a4d7943'),
+    name: 'Everest',
+    height: 8848,
+    location: [ 'Nepal', 'China' ],
+    ascents: {
+      first: { year: 1953 },
+      first_winter: { year: 1980 },
+      total: 5656
+    }
+  }
+]
+peaksdb> db.mountains.find({ "ascents.total": { $gt: 1000 } })
+[
+  {
+    _id: ObjectId('67b59d554cd30cf76a4d7943'),
+    name: 'Everest',
+    height: 8848,
+    location: [ 'Nepal', 'China' ],
+    ascents: {
+      first: { year: 1953 },
+      first_winter: { year: 1980 },
+      total: 5656
+    }
+  }
+]
