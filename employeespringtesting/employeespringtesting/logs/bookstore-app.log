@@ -1,0 +1,97 @@
+INFO  2025-02-03 21:33:49 [22104] --- [main] com.employee.EmployeeApplication : Starting EmployeeApplication using Java 21.0.4 with PID 22104 (D:\JAVATraining\Week3\springboot\employee\target\classes started by Maria.Tom in D:\JAVATraining\Week3\springboot\employee)
+DEBUG 2025-02-03 21:33:49 [22104] --- [main] com.employee.EmployeeApplication : Running with Spring Boot v3.3.8, Spring v6.1.16
+INFO  2025-02-03 21:33:49 [22104] --- [main] com.employee.EmployeeApplication : The following 1 profile is active: "test"
+INFO  2025-02-03 21:33:50 [22104] --- [main] o.s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+INFO  2025-02-03 21:33:50 [22104] --- [main] o.s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 65 ms. Found 1 JPA repository interface.
+INFO  2025-02-03 21:33:51 [22104] --- [main] o.s.b.w.e.tomcat.TomcatWebServer : Tomcat initialized with port 8081 (http)
+INFO  2025-02-03 21:33:51 [22104] --- [main] o.a.coyote.http11.Http11NioProtocol : Initializing ProtocolHandler ["http-nio-8081"]
+INFO  2025-02-03 21:33:51 [22104] --- [main] o.a.catalina.core.StandardService : Starting service [Tomcat]
+INFO  2025-02-03 21:33:51 [22104] --- [main] o.a.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/10.1.34]
+INFO  2025-02-03 21:33:51 [22104] --- [main] o.a.c.c.C.[.[.[/employeeapp] : Initializing Spring embedded WebApplicationContext
+INFO  2025-02-03 21:33:51 [22104] --- [main] o.s.b.w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1392 ms
+INFO  2025-02-03 21:33:51 [22104] --- [main] o.h.jpa.internal.util.LogHelper : HHH000204: Processing PersistenceUnitInfo [name: default]
+INFO  2025-02-03 21:33:51 [22104] --- [main] org.hibernate.Version : HHH000412: Hibernate ORM core version 6.5.3.Final
+INFO  2025-02-03 21:33:51 [22104] --- [main] o.h.c.i.RegionFactoryInitiator : HHH000026: Second-level cache disabled
+INFO  2025-02-03 21:33:51 [22104] --- [main] o.s.o.j.p.SpringPersistenceUnitInfo : No LoadTimeWeaver setup: ignoring JPA class transformer
+INFO  2025-02-03 21:33:51 [22104] --- [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting...
+INFO  2025-02-03 21:33:52 [22104] --- [main] com.zaxxer.hikari.pool.HikariPool : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1cc93da4
+INFO  2025-02-03 21:33:52 [22104] --- [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed.
+INFO  2025-02-03 21:33:52 [22104] --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+INFO  2025-02-03 21:33:53 [22104] --- [main] o.s.o.j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+WARN  2025-02-03 21:33:53 [22104] --- [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+INFO  2025-02-03 21:33:53 [22104] --- [main] o.s.v.b.OptionalValidatorFactoryBean : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+INFO  2025-02-03 21:33:53 [22104] --- [main] o.a.coyote.http11.Http11NioProtocol : Starting ProtocolHandler ["http-nio-8081"]
+INFO  2025-02-03 21:33:53 [22104] --- [main] o.s.b.w.e.tomcat.TomcatWebServer : Tomcat started on port 8081 (http) with context path '/employeeapp'
+INFO  2025-02-03 21:33:53 [22104] --- [main] com.employee.EmployeeApplication : Started EmployeeApplication in 4.375 seconds (process running for 4.78)
+INFO  2025-02-03 21:34:15 [22104] --- [http-nio-8081-exec-2] o.a.c.c.C.[.[.[/employeeapp] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+INFO  2025-02-03 21:34:15 [22104] --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet : Initializing Servlet 'dispatcherServlet'
+INFO  2025-02-03 21:34:15 [22104] --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet : Completed initialization in 2 ms
+INFO  2025-02-03 21:34:15 [22104] --- [http-nio-8081-exec-2] c.e.controller.EmployeeController : Getting all employees
+INFO  2025-02-03 21:34:15 [22104] --- [http-nio-8081-exec-2] c.e.controller.EmployeeController : No of employees 3
+INFO  2025-02-03 21:36:04 [22104] --- [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+INFO  2025-02-03 21:36:04 [22104] --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown initiated...
+INFO  2025-02-03 21:36:04 [22104] --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown completed.
+INFO  2025-02-03 21:36:54 [2976] --- [main] com.employee.EmployeeApplication : Starting EmployeeApplication using Java 21.0.4 with PID 2976 (D:\JAVATraining\Week3\springboot\employee\target\classes started by Maria.Tom in D:\JAVATraining\Week3\springboot\employee)
+DEBUG 2025-02-03 21:36:54 [2976] --- [main] com.employee.EmployeeApplication : Running with Spring Boot v3.3.8, Spring v6.1.16
+INFO  2025-02-03 21:36:54 [2976] --- [main] com.employee.EmployeeApplication : The following 1 profile is active: "test"
+INFO  2025-02-03 21:36:55 [2976] --- [main] o.s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+INFO  2025-02-03 21:36:55 [2976] --- [main] o.s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 59 ms. Found 1 JPA repository interface.
+INFO  2025-02-03 21:36:55 [2976] --- [main] o.s.b.w.e.tomcat.TomcatWebServer : Tomcat initialized with port 8081 (http)
+INFO  2025-02-03 21:36:55 [2976] --- [main] o.a.coyote.http11.Http11NioProtocol : Initializing ProtocolHandler ["http-nio-8081"]
+INFO  2025-02-03 21:36:55 [2976] --- [main] o.a.catalina.core.StandardService : Starting service [Tomcat]
+INFO  2025-02-03 21:36:55 [2976] --- [main] o.a.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/10.1.34]
+INFO  2025-02-03 21:36:55 [2976] --- [main] o.a.c.c.C.[.[.[/employeeapp] : Initializing Spring embedded WebApplicationContext
+INFO  2025-02-03 21:36:55 [2976] --- [main] o.s.b.w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1289 ms
+INFO  2025-02-03 21:36:56 [2976] --- [main] o.h.jpa.internal.util.LogHelper : HHH000204: Processing PersistenceUnitInfo [name: default]
+INFO  2025-02-03 21:36:56 [2976] --- [main] org.hibernate.Version : HHH000412: Hibernate ORM core version 6.5.3.Final
+INFO  2025-02-03 21:36:56 [2976] --- [main] o.h.c.i.RegionFactoryInitiator : HHH000026: Second-level cache disabled
+INFO  2025-02-03 21:36:56 [2976] --- [main] o.s.o.j.p.SpringPersistenceUnitInfo : No LoadTimeWeaver setup: ignoring JPA class transformer
+INFO  2025-02-03 21:36:56 [2976] --- [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting...
+INFO  2025-02-03 21:36:56 [2976] --- [main] com.zaxxer.hikari.pool.HikariPool : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7b3feb26
+INFO  2025-02-03 21:36:56 [2976] --- [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed.
+INFO  2025-02-03 21:36:57 [2976] --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+INFO  2025-02-03 21:36:57 [2976] --- [main] o.s.o.j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+WARN  2025-02-03 21:36:57 [2976] --- [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+INFO  2025-02-03 21:36:57 [2976] --- [main] o.s.v.b.OptionalValidatorFactoryBean : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+INFO  2025-02-03 21:36:58 [2976] --- [main] o.a.coyote.http11.Http11NioProtocol : Starting ProtocolHandler ["http-nio-8081"]
+INFO  2025-02-03 21:36:58 [2976] --- [main] o.s.b.w.e.tomcat.TomcatWebServer : Tomcat started on port 8081 (http) with context path '/employeeapp'
+INFO  2025-02-03 21:36:58 [2976] --- [main] com.employee.EmployeeApplication : Started EmployeeApplication in 3.918 seconds (process running for 4.258)
+INFO  2025-02-03 21:37:09 [2976] --- [http-nio-8081-exec-1] o.a.c.c.C.[.[.[/employeeapp] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+INFO  2025-02-03 21:37:09 [2976] --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet : Initializing Servlet 'dispatcherServlet'
+INFO  2025-02-03 21:37:09 [2976] --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet : Completed initialization in 3 ms
+INFO  2025-02-03 21:37:09 [2976] --- [http-nio-8081-exec-1] c.e.controller.EmployeeController : Getting employee with id: 1
+INFO  2025-02-03 21:38:30 [2976] --- [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+INFO  2025-02-03 21:38:30 [2976] --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown initiated...
+INFO  2025-02-03 21:38:30 [2976] --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown completed.
+INFO  2025-02-03 21:38:35 [10412] --- [main] com.employee.EmployeeApplication : Starting EmployeeApplication using Java 21.0.4 with PID 10412 (D:\JAVATraining\Week3\springboot\employee\target\classes started by Maria.Tom in D:\JAVATraining\Week3\springboot\employee)
+DEBUG 2025-02-03 21:38:35 [10412] --- [main] com.employee.EmployeeApplication : Running with Spring Boot v3.3.8, Spring v6.1.16
+INFO  2025-02-03 21:38:35 [10412] --- [main] com.employee.EmployeeApplication : The following 1 profile is active: "test"
+INFO  2025-02-03 21:38:36 [10412] --- [main] o.s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+INFO  2025-02-03 21:38:36 [10412] --- [main] o.s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 71 ms. Found 1 JPA repository interface.
+INFO  2025-02-03 21:38:36 [10412] --- [main] o.s.b.w.e.tomcat.TomcatWebServer : Tomcat initialized with port 8081 (http)
+INFO  2025-02-03 21:38:36 [10412] --- [main] o.a.coyote.http11.Http11NioProtocol : Initializing ProtocolHandler ["http-nio-8081"]
+INFO  2025-02-03 21:38:36 [10412] --- [main] o.a.catalina.core.StandardService : Starting service [Tomcat]
+INFO  2025-02-03 21:38:36 [10412] --- [main] o.a.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/10.1.34]
+INFO  2025-02-03 21:38:36 [10412] --- [main] o.a.c.c.C.[.[.[/employeeapp] : Initializing Spring embedded WebApplicationContext
+INFO  2025-02-03 21:38:36 [10412] --- [main] o.s.b.w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1260 ms
+INFO  2025-02-03 21:38:36 [10412] --- [main] o.h.jpa.internal.util.LogHelper : HHH000204: Processing PersistenceUnitInfo [name: default]
+INFO  2025-02-03 21:38:36 [10412] --- [main] org.hibernate.Version : HHH000412: Hibernate ORM core version 6.5.3.Final
+INFO  2025-02-03 21:38:36 [10412] --- [main] o.h.c.i.RegionFactoryInitiator : HHH000026: Second-level cache disabled
+INFO  2025-02-03 21:38:37 [10412] --- [main] o.s.o.j.p.SpringPersistenceUnitInfo : No LoadTimeWeaver setup: ignoring JPA class transformer
+INFO  2025-02-03 21:38:37 [10412] --- [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting...
+INFO  2025-02-03 21:38:37 [10412] --- [main] com.zaxxer.hikari.pool.HikariPool : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1cc93da4
+INFO  2025-02-03 21:38:37 [10412] --- [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed.
+INFO  2025-02-03 21:38:38 [10412] --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+INFO  2025-02-03 21:38:38 [10412] --- [main] o.s.o.j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+WARN  2025-02-03 21:38:38 [10412] --- [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+INFO  2025-02-03 21:38:38 [10412] --- [main] o.s.v.b.OptionalValidatorFactoryBean : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+INFO  2025-02-03 21:38:38 [10412] --- [main] o.a.coyote.http11.Http11NioProtocol : Starting ProtocolHandler ["http-nio-8081"]
+INFO  2025-02-03 21:38:38 [10412] --- [main] o.s.b.w.e.tomcat.TomcatWebServer : Tomcat started on port 8081 (http) with context path '/employeeapp'
+INFO  2025-02-03 21:38:38 [10412] --- [main] com.employee.EmployeeApplication : Started EmployeeApplication in 3.782 seconds (process running for 4.124)
+INFO  2025-02-03 21:38:50 [10412] --- [http-nio-8081-exec-2] o.a.c.c.C.[.[.[/employeeapp] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+INFO  2025-02-03 21:38:50 [10412] --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet : Initializing Servlet 'dispatcherServlet'
+INFO  2025-02-03 21:38:50 [10412] --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet : Completed initialization in 2 ms
+INFO  2025-02-03 21:38:50 [10412] --- [http-nio-8081-exec-2] c.e.controller.EmployeeController : Getting employee with id: 1
+INFO  2025-02-03 21:40:08 [10412] --- [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+INFO  2025-02-03 21:40:08 [10412] --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown initiated...
+INFO  2025-02-03 21:40:08 [10412] --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown completed.

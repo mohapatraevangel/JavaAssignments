@@ -1,0 +1,29 @@
+<configuration>
+
+    <!-- Define a custom appender (e.g., Console, File) -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%-5level %d{yyyy-MM-dd HH:mm:ss} [${PID}] --- [%thread] %logger{36} : %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Define a custom file appender (optional) -->
+<!--    <appender name="FILE" class="ch.qos.logback.core.FileAppender">-->
+<!--        <file>logs/bookstore-app.log</file>-->
+<!--        <encoder>-->
+<!--            <pattern>%-5level %d{yyyy-MM-dd HH:mm:ss} [${PID}] -&#45;&#45; [%thread] %logger{36} : %msg%n</pattern>-->
+<!--        </encoder>-->
+<!--    </appender>-->
+
+    <!-- Set the root logger level and attach appenders -->
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="FILE"/>
+    </root>
+
+    <!-- Custom logger for the bookstore service -->
+    <logger name="com.employee" level="DEBUG">
+        <appender-ref ref="CONSOLE"/>
+    </logger>
+
+</configuration>
